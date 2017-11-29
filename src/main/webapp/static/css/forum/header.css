@@ -1,0 +1,70 @@
+@charset "UTF-8";
+.header{
+    width: 100%;
+    height:50px;
+    background-color: #eb283e;
+    border-radius: 2px;
+    position: fixed;
+    top:0;
+    z-index: 100;
+
+
+}
+.header .center{
+
+    width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+.header .center ul{
+    float: left;
+}
+.header .center ul li{
+
+     float: left;
+    border-radius: 2px;
+    margin-left: 20px;
+
+}
+.header .center ul li a {
+
+    font-size: 1.3em;
+    line-height: 50px;
+    color: white;
+    font-family: "幼圆";
+    padding: 12px 10px;
+
+
+}
+.header .center ul li a:hover{
+    padding: 12px 10px;
+    background-color:#17323f ;
+    border-radius: 5px;
+}
+.header .center .login{
+    float: right;
+
+
+}
+.header .center .login ul li{
+
+    margin-left: 20px;
+    float: left;
+
+}
+.header .center .login ul li a{
+
+    font-size: 1.3em;
+    line-height: 50px;
+    color: white;
+    font-family: "幼圆";
+    padding: 12px 10px;
+    background-color: #17323f ;
+    border-radius: 5px;
+}
+.header .center .login ul li a:hover{
+    color: #17323f;
+    padding: 12px 10px;
+    background-color: white ;
+
+}

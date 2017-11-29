@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.doublehh.system.dao.RoleResourceMapper" >
+  <resultMap id="BaseResultMap" type="cn.doublehh.system.model.RoleResource" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="role_id" property="roleId" jdbcType="INTEGER" />
+    <result column="resource_id" property="resourceId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    <!--
+      WARNING - @mbggenerated
+    -->
+    id, role_id, resource_id
+  </sql>
+  <delete id="deleteRoleResourcesByRoleId" parameterType="java.lang.Integer" >
+    delete from t_s_role_resource
+    where role_id = #{roleId,jdbcType=INTEGER}
+  </delete>
+  
+</mapper>

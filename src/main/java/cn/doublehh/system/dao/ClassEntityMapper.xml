@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.doublehh.system.dao.ClassEntityMapper">
+  <resultMap id="BaseResultMap" type="cn.doublehh.system.model.ClassEntity">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="cid" jdbcType="VARCHAR" property="cid" />
+    <result column="sit" jdbcType="VARCHAR" property="sit" />
+    
+    <result column="zjbrand" jdbcType="VARCHAR" property="zjbrand" />
+    <result column="zjtype" jdbcType="VARCHAR" property="zjtype" />
+    <result column="zjinstrumentnum" jdbcType="VARCHAR" property="zjinstrumentnum" />
+    <result column="zjstartdate" jdbcType="VARCHAR" property="zjstartdate" />
+    <result column="protect" jdbcType="VARCHAR" property="protect" />
+    <result column="attention" jdbcType="VARCHAR" property="attention" />
+    <result column="tybrand" jdbcType="VARCHAR" property="tybrand" />
+    <result column="tytype" jdbcType="VARCHAR" property="tytype" />
+    <result column="tyinstrumentnum" jdbcType="VARCHAR" property="tyinstrumentnum" />
+    <result column="tystartdate" jdbcType="VARCHAR" property="tystartdate" />
+    <result column="bulbstartdate" jdbcType="VARCHAR" property="bulbstartdate" />
+    <result column="addup" jdbcType="VARCHAR" property="addup" />
+    
+    <result column="tyid" jdbcType="VARCHAR" property="tyid" />
+    <result column="tyzt" jdbcType="VARCHAR" property="tyzt" />
+    <result column="zjid" jdbcType="VARCHAR" property="zjid" />
+    <result column="zjzt" jdbcType="VARCHAR" property="zjzt" />
+    <result column="ccid" jdbcType="VARCHAR" property="ccid" />
+    <result column="cczt" jdbcType="VARCHAR" property="cczt" />
+    <result column="xsqid" jdbcType="VARCHAR" property="xsqid" />
+    <result column="xsqzt" jdbcType="VARCHAR" property="xsqzt" />
+    <result column="czt" jdbcType="VARCHAR" property="czt" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    id, cid, sit, zjbrand, zjtype, zjinstrumentnum, zjstartdate, protect, attention, 
+    tybrand, tytype, tyinstrumentnum, tystartdate, bulbstartdate, addup,
+    tyid, tyzt, zjid, zjzt, ccid, cczt, xsqid, xsqzt, czt
+  </sql>
+  
+  <select id="getClassByCid" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select 
+    *
+    from t_s_class where cid=#{cid}
+  </select>
+  <select id="deleteClassByCid" resultMap="BaseResultMap" parameterType="java.lang.String">
+    delete from t_s_class where cid=#{cid}
+  </select>
+
+</mapper>

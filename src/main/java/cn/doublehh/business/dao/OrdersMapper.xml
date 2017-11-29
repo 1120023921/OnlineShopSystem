@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.doublehh.business.dao.OrdersMapper">
+  <resultMap id="BaseResultMap" type="cn.doublehh.business.model.Orders">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, price, uid, time, status, remark
+  </sql>
+  
+  <insert id="addOrder" parameterType="cn.doublehh.business.model.Orders">
+  	insert into orders(id,price,uid,time,status,remark) values(#{id},#{price},#{uid},#{time},#{status},#{remark})
+  </insert>
+  <update id="updateOrder" parameterType="cn.doublehh.business.model.Orders">
+  	update orders set price=#{price},uid=#{uid},time=#{time},status=#{status} where id=#{id}
+  </update>
+  <select id="getAllBackOrders" resultType="cn.doublehh.business.model.Orders">
+  	select * from orders where status=0 order by time desc
+  </select>
+  <select id="getAllSendOrders" resultType="cn.doublehh.business.model.Orders">
+  	select * from orders where status=1 order by time desc
+  </select>
+  <select id="getAllCompleteOrders" resultType="cn.doublehh.business.model.Orders">
+  	select * from orders where status=2 order by time desc
+  </select>
+  <select id="getUidByOrderId" resultType="java.lang.String">
+  	select uid from orders where id=#{id}
+  </select>
+  <select id="getOrderById" resultType="cn.doublehh.business.model.Orders">
+  	select * from orders where id=#{id}
+  </select>
+  <select id="getAllUserOrders" resultType="cn.doublehh.business.model.Orders">
+  	select * from orders where uid=#{uid} order by time desc
+  </select>
+</mapper>

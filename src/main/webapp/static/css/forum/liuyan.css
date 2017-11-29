@@ -1,0 +1,181 @@
+@charset "UTF-8";
+body{
+    background: url("../../img/forum/bg.jpg") repeat;
+    background-size:100%;
+    background-attachment: fixed;
+
+}
+button{
+    border: none;background:none;font-weight: bold;width: 60px;white-space: nowrap;color: #312724;font-family: sans-serif;
+}
+.liuyan{
+    width: 1000px;
+    height: 500px;
+    margin:20px auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+
+}
+.liuyan .p1{
+    font-size: 1.4em;
+    font-family: "Microsoft YaHei", serif;
+    color: #88a07a;
+    padding:10px 30px ;
+}
+.liuyan .neirong{
+    display: block;
+    width: 940px;
+    height: 210px;
+    font-family: "Microsoft YaHei", serif;
+    font-size: 1.4em;
+    color:#17323f;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    margin-top: 60px;
+    margin-left: 25px;}
+.liuyan .submit1{
+    width: 120px;
+    height: 30px;
+    border: 1px solid #eb283e;
+    border-radius: 2px;
+    background-color: #eb283e;
+    float: right;
+    margin-right: 30px;
+    cursor: pointer;
+   margin-top: 140px;
+}
+.liuyan .submit1 p{
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.4em;
+    font-family: Consolas;
+}
+.liuyan .submit1:hover{
+    border: 1px solid #ff4968;
+    background-color: #ff4968;
+}
+.daohang{
+    width: 1000px;
+    height: 50px;
+    margin:-60px auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+
+
+}
+.daohang ul li{
+
+    float: left;
+    border-radius: 2px;
+    margin-left: 20px;
+
+}
+.daohang ul li a {
+
+    font-size: 1.3em;
+    line-height: 50px;
+    color:#ff4968;
+    font-family: "幼圆";
+    font-weight: bold;
+    padding: 12px 10px;
+
+
+}
+.daohang ul li a:hover{
+    padding: 12px 10px;
+    background-color:#17323f ;
+    border-radius: 5px;
+}
+.box{
+    width: 1000px;
+    margin:80px auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.box .p1{
+    font-size: 1.4em;
+    font-family: "Microsoft YaHei", serif;
+    color: #88a07a;
+
+    padding:10px 30px ;
+    border-bottom: 1px dashed #cccccc;
+
+}
+.box .center{
+    width: 940px;
+    margin:10px auto;
+    overflow: hidden;
+
+}
+.box .center img{
+    display: block;
+    width: 30%;
+}
+
+.box .center .wenzi{
+    float: left;
+    width: 860px;
+}
+.box .center .wenzi .name{
+    color: #17323f ;
+    padding: 2px 30px;
+    font-family: "Microsoft YaHei", serif;
+    font-size: 1.4em;
+}
+.box .center .wenzi .time{
+    color: #ccc ;
+    padding: 2px 30px;
+    font-family: "Microsoft YaHei", serif;
+    font-size: 0.8em;
+}
+.box .center .wenzi .text{
+    padding: 2px 30px;
+    font-family: "Microsoft YaHei", serif;
+    font-size: 1.2em;
+}
+.box .pinglun{
+    width: 940px;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+    margin:10px auto;
+}
+.box .pinglun .pinglun_button{
+
+    float: right;
+    margin-right: 100px;
+    font-size: 1em;
+    padding: 10px 10px;
+    cursor: pointer;
+    outline: none;
+
+}
+.loading{
+	 width: 1000px;
+
+    margin: auto;
+    margin-top:-60px;
+    background-color: #ffffff;
+    text-align:center;
+    font-size:1.2em;
+    line-height:30px;
+    overflow: hidden;
+    
+	
+}
+.loading .div1{
+	width:250px;
+	height:30px;
+	margin:auto;
+	
+}
+.loading .div1 img{
+	display:block;
+	padding:5px;
+	margin-top:4px;
+	float:left;
+	
+}
+

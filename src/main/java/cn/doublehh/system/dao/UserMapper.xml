@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.doublehh.system.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="cn.doublehh.system.model.User">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sex" jdbcType="VARCHAR" property="sex" />
+    <result column="tel" jdbcType="VARCHAR" property="tel" />
+    <result column="mail" jdbcType="VARCHAR" property="mail" />
+    <result column="enabled" jdbcType="VARCHAR" property="enabled" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="create_date" jdbcType="DATE" property="createDate" />
+    <result column="update_date" jdbcType="DATE" property="updateDate" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+  </resultMap>
+  <resultMap id="UserWithRolesMap" type="cn.doublehh.system.model.User" extends="BaseResultMap">
+  	<collection property="roles" resultMap="cn.doublehh.system.dao.RoleMapper.BaseResultMap" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    id, uid, name, sex, tel, mail, enabled, create_date, update_date, create_by, update_by, 
+    remark, password, addresss
+  </sql>
+  <insert id="registerUser" parameterType="cn.doublehh.system.model.User">
+  	insert into t_s_user(uid,name,tel,address,enabled,password,remark) values(#{uid},#{name},#{tel},#{address},#{enabled},#{password},#{remark})
+  </insert>
+  <select id="getUserByUid" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select 
+    *
+    from t_s_user where uid=#{uid}
+  </select>
+  <select id="getUserWithRolesByUid" resultMap="UserWithRolesMap" parameterType="java.lang.String">
+    select 
+    *
+    from t_s_user t1,t_s_role t2,t_s_user_role t3 where t1.id=t3.user_id and t2.id=t3.role_id and t1.uid=#{uid}
+  </select>
+  <select id="getUsersByRoleId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select 
+    *
+    from t_s_user t1,t_s_user_role t2 where t1.id=t2.user_id and t2.role_id=#{roleId}
+  </select>
+  <update id="updatePersonInfo" parameterType="cn.doublehh.system.model.User">
+  	update t_s_user set name=#{name},tel=#{tel},address=#{address} where uid=#{uid}
+  </update>
+  <select id="checkOldPassword" resultType="cn.doublehh.system.model.User" parameterType="java.lang.String">
+    select 
+    *
+    from t_s_user where uid=#{uid} and password=#{password}
+  </select>
+  <update id="updatePassword" parameterType="java.lang.String">
+  	update t_s_user set password=#{password} where uid=#{uid}
+  </update>
+</mapper>

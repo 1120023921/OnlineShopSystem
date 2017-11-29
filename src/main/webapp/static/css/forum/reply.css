@@ -1,0 +1,13 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	background: url("images/bg.jpg");
+}
+
+.panel img{
+	display: block;
+    width: 30%;
+}

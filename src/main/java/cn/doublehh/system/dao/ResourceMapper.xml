@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.doublehh.system.dao.ResourceMapper">
+	<resultMap id="BaseResultMap" type="cn.doublehh.system.model.Resource">
+		<!-- WARNING - @mbggenerated -->
+		<id column="id" jdbcType="INTEGER" property="id" />
+		<result column="reid" jdbcType="VARCHAR" property="reid" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="type" jdbcType="VARCHAR" property="type" />
+		<result column="enabled" jdbcType="VARCHAR" property="enabled" />
+		<result column="create_date" jdbcType="DATE" property="createDate" />
+		<result column="update_date" jdbcType="DATE" property="updateDate" />
+		<result column="create_by" jdbcType="VARCHAR" property="createBy" />
+		<result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+		<result column="remark" jdbcType="VARCHAR" property="remark" />
+		<result column="pid" jdbcType="INTEGER" property="pid" />
+		<result column="value" jdbcType="VARCHAR" property="value" />
+		<result column="leaf" jdbcType="VARCHAR" property="leaf" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		<!-- WARNING - @mbggenerated -->
+		id, reid, name, type, enabled, create_date, update_date, create_by,
+		update_by, remark,
+		pid, value,leaf
+	</sql>
+	<resultMap extends="BaseResultMap" id="ResourceMap"
+		type="cn.doublehh.system.model.Resource">
+		<collection column="id" javaType="java.util.List" property="children"
+			select="getResourcesByPid" />
+	</resultMap>
+	<select id="getResourcesByPidAndType" resultMap="BaseResultMap"
+		parameterType="cn.doublehh.system.model.Resource">
+		select
+		*
+		from t_s_resource
+		<where>
+			<if test="pid == null">
+				pid is null
+			</if>
+			<if test="pid != null">
+				pid =#{pid}
+			</if>
+			<if test="type!=null">
+				and type=#{type}
+			</if>
+		</where>
+	</select>
+	<select id="getResourcesByRoleId" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		*
+		from t_s_resource t1,t_s_role_resource t2 where t1.id=t2.resource_id and
+		t2.role_id=#{roleId}
+	</select>
+</mapper>

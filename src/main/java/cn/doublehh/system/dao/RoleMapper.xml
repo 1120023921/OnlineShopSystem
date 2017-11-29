@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.doublehh.system.dao.RoleMapper">
+  <resultMap id="BaseResultMap" type="cn.doublehh.system.model.Role">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="roid" jdbcType="VARCHAR" property="roid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="enabled" jdbcType="VARCHAR" property="enabled" />
+    <result column="create_date" jdbcType="DATE" property="createDate" />
+    <result column="update_date" jdbcType="DATE" property="updateDate" />
+    <result column="create_by" jdbcType="VARCHAR" property="createBy" />
+    <result column="update_by" jdbcType="VARCHAR" property="updateBy" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbggenerated
+    -->
+    id, roid, name, enabled, create_date, update_date, create_by, update_by, remark
+  </sql>
+  <select id="getRolesByUserId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    *
+    from t_s_role t1,t_s_user_role t2 where t1.id=t2.role_id and t2.user_id=#{user_id}
+  </select>
+  
+  <select id="getRolesByUid" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    *
+    from t_s_role t1,t_s_user_role t2,t_s_user t3 where t1.id=t2.role_id and t3.id=t2.user_id and t3.uid=#{uid}
+  </select>
+</mapper>

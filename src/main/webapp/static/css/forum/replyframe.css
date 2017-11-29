@@ -1,0 +1,66 @@
+@charset "UTF-8";
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx");
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'themify';
+  src: url("../fonts/themify/themify.eot?-fvbane");
+  src: url("../fonts/themify/themify.eot?#iefix-fvbane") format("embedded-opentype"), url("../fonts/themify/themify.woff?-fvbane") format("woff"), url("../fonts/themify/themify.ttf?-fvbane") format("truetype"), url("../fonts/themify/themify.svg?-fvbane#themify") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'yuan';
+  src:  url("../fonts/myfont/yuan.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'zushi';
+  src:  url("../fonts/myfont/zushi.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav-header a{
+	text-decoration: none;
+	color: #7c8799;
+}
+html{
+	overflow:-Scroll;
+	overflow-x:hidden;
+}
+.nav-header a:HOVER{
+	color: #FFFFFF;
+}
+.nav-header{
+	width:100%;
+	margin-left:5%;
+	overflow: hidden;
+}
+.nav-header h1{
+	width:20%;
+	float: left;
+}
+.nav-header ul{
+	float:left;
+	width:80%;
+	height:50px;
+}
+.nav-header ul li{
+	font-family: zushi;
+	float: left;
+	margin-top: 38px;
+	margin-left: 5%;
+	font-size: 21px;
+}
+.nav-header h1 a{
+	display:block;
+	width:30%;
+	height:80px;
+	margin-top: 0%;
+}

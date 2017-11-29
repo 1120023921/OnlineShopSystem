@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.doublehh.business.dao.ItemsMapper">
+  <resultMap id="BaseResultMap" type="cn.doublehh.business.model.Items">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
+    <result column="order_id" jdbcType="VARCHAR" property="order_id" />
+    <result column="goods_id" jdbcType="VARCHAR" property="goods_id" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="eachprice" jdbcType="DOUBLE" property="eachprice" />
+    <result column="goods_name" jdbcType="VARCHAR" property="goods_name" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    id, price, order_id, goods_id, num, eachprice, goods_name
+  </sql>
+  
+  
+  <insert id="addItems" parameterType="cn.doublehh.business.model.Items">
+  	insert into items(id,price,order_id,goods_id,num,eachprice,goods_name) values(#{id},#{price},#{order_id},#{goods_id},#{num},#{eachprice},#{goods_name})
+  </insert>
+  <update id="updateItems" parameterType="cn.doublehh.business.model.Items">
+  	update items set num=#{num},price=#{price} where id=#{id}
+  </update>
+  <delete id="deleteItems" parameterType="java.lang.String">
+  	delete from items where id=#{id}
+  </delete>
+  <select id="getItems" resultType="cn.doublehh.business.model.Items">
+  	select * from items where order_id=#{order_id}
+  </select>
+  <select id="getItemsByOrderIdAndGoodsId" resultType="cn.doublehh.business.model.Items">
+  	select * from items where order_id=#{order_id} and goods_id=#{goods_id}
+  </select>
+</mapper>
